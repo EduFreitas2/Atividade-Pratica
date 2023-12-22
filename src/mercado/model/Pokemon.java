@@ -1,6 +1,6 @@
 package mercado.model;
 
-public class Pokemon {
+public abstract class Pokemon {
 	private String nomeTreinador;
 	private String nomePokemon;
 	private float preco;

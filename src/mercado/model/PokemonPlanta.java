@@ -32,7 +32,7 @@ public class PokemonPlanta extends Pokemon{
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		//Especificações do Pokemon Tipo Fogo
+		//Especificações do Pokemon Tipo Planta
 		System.out.println("\nVANTAGEM CONTRA: Agua ");
 		System.out.println("DESVANTAGEM CONTRA: Fogo ");
 		System.out.println("HABILIDADE: Facilidade para cortar objetos");
