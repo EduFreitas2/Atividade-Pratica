@@ -3,6 +3,9 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+import mercado.model.PokemonAgua;
+
 import java.lang.Thread;
 
 
@@ -12,7 +15,7 @@ public class MenuMercado {
 		// TODO Auto-generated method stub
 		//instanciando a classe
 				Scanner read = new Scanner(System.in);
-				int opcao, nivel, tipo, id;
+				int opcao, nivel, tipo;
 				String nomePokemon, nomeTreinador, continua;
 				float valor;
 				
@@ -78,7 +81,7 @@ public class MenuMercado {
 					System.out.println("1 - FOGO");
 					System.out.println("2 - ÁGUA");
 					System.out.println("3 - PLANTA");
-					System.out.println("4 - TERRA");
+					System.out.println("4 - NORMAL");
 					do {
 						System.out.println("Entre com a opção desejada");
 						tipo = read.nextInt();
@@ -100,13 +103,18 @@ public class MenuMercado {
 							keyPress();
 							}
 							case 2 -> {
+								PokemonAgua pokemon1 = new PokemonAgua(1, nomeTreinador, nomePokemon, tipo, nivel, valor);
+								
 								System.out.println("Verificando se o preço do seu Pokemon é compátivel com o mercado...");
 								try {
 									Thread.sleep(2000);
+									
 								} catch (InterruptedException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
+								pokemon1.DefinirPreco();
+								pokemon1.visualizar();
 								keyPress();
 								
 							}	
