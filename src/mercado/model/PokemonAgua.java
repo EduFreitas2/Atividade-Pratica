@@ -17,20 +17,21 @@ public class PokemonAgua extends Pokemon{
 	 * Por isso, o preço vai ser determinado por essa formula:
 	 * preco = nivel*15 + 1000 
 	 * */
-	public void DefinirPreco()
+	public boolean DefinirPreco()
 	{
 		float precoIdeal = this.getNivel()*15 + 1000;
 		if (this.getPreco() >=  precoIdeal)
 		{
-			System.out.println("PREÇO NÃO COMPÁTIVEL COM O MERCADO!\n\n Não há como comprarmos o seu Pokémon.");
-			
+			System.out.println("PREÇO NÃO COMPATÍVEL COM O MERCADO!\n\n Não há como comprarmos o seu Pokémon.");
+			return false;
 		}
 		else//caso a loja compre, o preço para revender o pokemon será determinado pelo preço ideal + 50 reais
 		{
 			
-			System.out.println("TRATO FEITO!");
+			System.out.println("\nTRATO FEITO!");
 			System.out.println("\nPara mais detalhes, acesse o Histórico de Compras e Vendas");
 			this.setPreco(precoIdeal+50);
+			return true;
 		}
 	}
 	@Override

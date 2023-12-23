@@ -13,28 +13,29 @@ public class PokemonNormal extends Pokemon{
 	 * Por isso, o preço vai ser determinado por essa formula:
 	 * preco = nivel*3 + 400 
 	 * */
-	public void DefinirPreco()
+	public boolean DefinirPreco()
 	{
 		float precoIdeal = this.getNivel()*3 + 400;
 		if (this.getPreco() >=  precoIdeal)
 		{
-			System.out.println("PREÇO NÃO COMPÁTIVEL COM O MERCADO!\n\n Não há como comprarmos o seu Pokémon.");
-			
+			System.out.println("PREÇO NÃO COMPATÍVEL COM O MERCADO!\n\nNão há como comprarmos o seu Pokémon.");
+			return false;
 		}
 		else//caso a loja compre, o preço para revender o pokemon será determinado pelo preço ideal + 50 reais
 		{
 			
-			System.out.println("TRATO FEITO!");
+			System.out.println("\nTRATO FEITO!");
 			System.out.println("\nPara mais detalhes, acesse o Histórico de Compras e Vendas");
 			this.setPreco(precoIdeal+50);
+			return true;
 		}
 	}
 	@Override
 	public void visualizar() {
 		super.visualizar();
 		//Especificações do Pokemon Tipo NORMAL
-		System.out.println("\nVANTAGEM CONTRA: Não há ");
-		System.out.println("DESVANTAGEM CONTRA: Não há ");
+		System.out.println("\nVANTAGEM CONTRA: Não há vantagens ");
+		System.out.println("DESVANTAGEM CONTRA: Não há desvantagens ");
 		System.out.println("HABILIDADE: Grande Velocidade");
 		
 	}

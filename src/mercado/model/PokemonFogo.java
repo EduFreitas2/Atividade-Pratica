@@ -15,13 +15,13 @@ public class PokemonFogo extends Pokemon{
 	 * Por isso, o preço vai ser determinado por essa formula:
 	 * preco = nivel*10 + 1000 
 	 * */
-	public void DefinirPreco()
+	public boolean DefinirPreco()
 	{
 		float precoIdeal = this.getNivel()*10 + 1000;
 		if (this.getPreco() >=  precoIdeal)
 		{
-			System.out.println("PREÇO NÃO COMPÁTIVEL COM O MERCADO!\n\n Não há como comprarmos o seu Pokémon.");
-			
+			System.out.println("PREÇO NÃO COMPATÍVEL COM O MERCADO!\n\nNão há como comprarmos o seu Pokémon.");
+			return false;
 		}
 		else//caso a loja compre, o preço para revender o pokemon será determinado pelo preço ideal + 50 reais
 		{
@@ -29,16 +29,16 @@ public class PokemonFogo extends Pokemon{
 			System.out.println("TRATO FEITO!");
 			System.out.println("\nPara mais detalhes, acesse o Histórico de Compras e Vendas");
 			this.setPreco(precoIdeal+50);
+			return true;
 		}
-
 	
 	}
 	@Override
 	public void visualizar() {
 		super.visualizar();
 		//Especificações do Pokemon Tipo Fogo
-		System.out.println("Vantagem contra Pokémon tipo Planta ");
-		System.out.println("Desvantagem contra Pokémon tipo Água ");
+		System.out.println("VANTAGEM CONTRA: Planta ");
+		System.out.println("DESVANTAGEM CONTRA: Água ");
 		System.out.println("Capacidade de iluminar lugares escuros ");
 		
 	}

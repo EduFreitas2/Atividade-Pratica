@@ -9,6 +9,7 @@ public abstract class Pokemon {
 	private int nivel;
 
 	public Pokemon(int numero, String nomeTreinador, String nomePokemon, int tipo,int nivel, float preco) {
+		this.numero = numero;
 		this.nomeTreinador = nomeTreinador;
 		this.nomePokemon = nomePokemon;
 		this.preco = preco;
@@ -94,10 +95,54 @@ public abstract class Pokemon {
 		System.out.println("***********************************************************");
 		System.out.println("ID Pokémon " + this.numero);
 		System.out.println("NOME DO POKÉMON: " + this.nomePokemon);
+		System.out.println("NIVEL DO POKEMON: " + this.nivel);
 		System.out.println("DONO: " + this.nomeTreinador);
 		System.out.println("TIPO DO POKÉMON: " + tipo);
 		System.out.println("PREÇO: " + this.preco);
 		
 	}
+public void visualizarTudo() {
 
+		
+		String tipo = "";
+		
+		switch(this.tipo) {
+		case 1:
+			tipo = "FOGO";
+		break;
+		case 2:
+			tipo = "AGUA";
+		break;
+		
+		case 3: 
+			tipo = "PLANTA";
+		break;
+		case 4:
+			tipo = "NORMAL";
+		break;
+		}
+		
+		
+		System.out.println("\n\n***********************************************************");
+		System.out.println("Dados do Pokémon:");
+		System.out.println("***********************************************************");
+		System.out.println("ID Pokémon " + this.numero);
+		System.out.println("NOME DO POKÉMON: " + this.nomePokemon);
+		System.out.println("NIVEL DO POKEMON: " + this.nivel);
+		System.out.println("DONO: " + this.nomeTreinador);
+		System.out.println("TIPO DO POKÉMON: " + tipo);
+		System.out.println("PREÇO: " + this.preco);
+		
+	}
+public void visualizarComprado()
+{
+	System.out.println("Dados do Pokémon:");
+	System.out.println("***********************************************************");
+	System.out.println("ID Pokémon " + this.numero);
+	System.out.println("NOME DO POKÉMON: " + this.nomePokemon);
+	System.out.println("NIVEL DO POKEMON: " + this.nivel);
+	System.out.println("NOVO DONO: " + this.nomeTreinador);
+	System.out.println("TIPO DO POKÉMON: " + tipo);
+	System.out.println("VALOR PAGO: " + this.preco);
+}
 }
